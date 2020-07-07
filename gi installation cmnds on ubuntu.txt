@@ -1,0 +1,231 @@
+sudo apt update
+sudo apt upgrade
+sudo apt install git
+
+
+
+how to configure user asnd email in git?
+
+git config --global user.name "sai"
+
+git config --global user.email "saivenklat1211@gmail.com"
+
+to check list
+
+git config --list
+
+How to create a project in git?
+
+Create a empty folder on desktop
+
+go to git bash and type (git init) it will initialize the project
+
+To verify any changes in our project use (git status)
+
+create new document in folder venkat now use this (git status) command
+
+now use git add filename or use git add . this will add both file ands directory
+now chk with git status
+now commit our changes with this cmnd  ( git commit -m "my first commit")
+
+now again go to texty file add some contect and save. come git bash type git status u will find that file has to be commited )
+
+agai u have to do ( git add .) and git commit -m "my secnd commit"
+
+
+How to add files in git?
+
+just copy the sampletxt file and paste them there only
+
+
+git status u will find new have to be added
+
+if u want to check logs of files
+
+git log
+
+if we want to see commit chnages done by single user or specific user use this command 
+
+git log --author "saivenkat1211@gmail.com"
+=====================================================================================================================================================
+
+
+
+GIT WORK FLOW
+
+
+
+WORKING AREA : it is wre u will add or delete content from files in folder u have created
+
+STAGING AREA : it is were u will do git status and u will add files with git add 
+
+REPOSITORY  : it is were u commit changes after adding files with git commit -m "my third coomit"
+==========================================================================================================================================
+
+To add notepad++ in git bash
+
+download notepad++ from google and install it
+copy path and go to env variables and go to system variables select PATH click on edit and click on new and add path
+
+now go to git bash type note++
+========================================================================================================================================
+
+How do we verify changes in git?
+
+try to chnage some content in text files located in folder 
+
+use (git diff) u will find difference
+
+if we want to see modfied files use this command  git diff --staged
+==============================================================================================================================
+
+How to delete a file in  git?
+
+go to ur directory and delete one file and go toi gitbash type git status
+
+u will find deleted file in red color that's not complete delete u have deleted file in working area we have to delete in stage area too
+
+fot this first we have to add to our stage area (git add .) now check git status
+
+now we have to commit the chanhes using (git commit -m " dleted some file) 
+
+else we have other option to delete file
+
+in git bash use thiscommand ( git rm filemname) and no need of adding git add . we can direcctly commit chnages
+===============================================================================================================================================
+
+what git and git hub?
+
+Git is distributed version control system and github is centralised repository where we can push code from our local repo to centralized and pull code from
+centralized to local
+==================================================================================================================================================
+
+How to create centalized repository?
+
+go to github.com cretae account and click plus symbol and create one repository
+
+go to desktop and cretae one flder nad login to that folder right open git bash
+
+to make this folder git use same command git init and now we need to this local repository to our git hub repository
+
+
+command for that ( git remote add origin "paste url here copied from github")
+
+so we have read me file in git hub that filwwe need to bring to local repository the command we use is git pull
+
+when we use git pull  it will ask us to track the proper information ie we are going to pull the data from github so use this command
+
+git pull origin master
+
+add some txt file new folder and add in local repo and stage it with git commit -m "" now if we want to push the newly created txt file from local to centralized
+repo use this command
+
+git push origin master
+
+if anyone creates new file in central repo and next day u dont what chnages have been made to central repo justbto know that use this command
+
+git pull origin master
+================================================================================================================================
+
+How to create branches in git?
+
+Branch in git is pointyer to commit
+
+To create new brach in use this command
+
+git branch <branch name>  EX: git branch developer so this develper branch is orginated from master branch where all data present master is copied to thid developer branch
+
+to jump in to developer branch use this cmnd   git checkout developer
+
+type git branch u will find two branches master and developer this developer will b in green and pointer is pointed to this developer branch
+
+in the same way create another branch
+
+now go to project created on desktop create two new files and go to gitbash and add them and commit those two files
+now check in which branch u were and do ls and swicth to master branch do ls u will find that those newly created files are not added. until u merge that
+particular branch with master branch we cant see same files in master branch
+======================================================================================================================================================
+
+How to merge branches in git?
+
+just type git branch admin u will find new txt files created in that project and if u checkout to master branch u cant find those new files in that project.
+
+
+
+now from admin branch push the changes use the following command ( git push origin admin) and now go to git hub and check u will find admin branch is added
+
+when we create any new branch until we push the changes that branch won't be available in git hub
+
+so to merge files from admin branch to master branch first we have to be in master branch and then use this command to merge
+
+git merge admin and type ls u will find files are merged but in github u can't fins those files now u have to push the changes
+
+git push origin master
+=====================================================================================================================================================
+how to revert a commit?
+
+go to project and edit one file and save it. type git status in bash i will find file is modified
+
+check difference use git diff  
+now we have to add file from working area to staging area using this command git add .
+
+now here some mistake u have done u want to revert code in modfied file so use this command
+git reset HEAD filename
+
+take some file and add that file in staging and commit those files.now u want to revert the last commited file use this command
+
+git reset HEAD~
+==============================================================================================================================================
+How we can add git in existing project?
+
+http://www.initializr.com/ go to this link and download bootstarpscript extract that zip and rename as webproject and do git init and git add and commit
+
+How do we add existing project in git hub?
+
+open github and login 
+now open ninja scm   u will find starter web project just click ok fork sysmbol to add that project in to ur github
+
+now we have clone that project in tou local machine for that crate one directory called project
+  in git hub copy url which under code button   and open git bash from projects folder use this command git clone <link> this will add starred project to our local machine
+=======================================================================================================================================================
+How to rename a file?
+
+git mv currentfile newname of file  ex: git mv sai venkat      ( after file creation add that file else that file wont be rnamed)
+
+how to move file to directory?
+
+git mv filename directoryname   ex: git mv sai seetha
+
+
+how to delet a filein git?
+
+git rm file name         ( until u commit chnages to that particlular file u cant delete)
+
+=================================================================================================================================================
+
+What is difference between git rebase and merge?
+
+both are used to merge braches . the onl difference is to void unnecessary commits like merge and keep single line history
+
+To delete any brnch from git bash command is ( git brnch -d bramchname)
+)
+create a new branch name it as (mybranch) and jump in to this branch
+
+do ls and edit some file and save it
+ now check log   git log --oneline --decorate --graph --all
+
+u will find history
+
+now jump into maaster branch and edit some file and add and commit that file and check log u will find two branches history
+
+now jump in to mybranch and rebase that branch instead of merge we are using rebase
+
+git rebase master ( this means u r merging this branch in to mster) u will find mybrach history on top of master branch 
+
+now jump in to mastre and edit some file and save it and commit it and now merge mybranch with master
+
+
+
+
+
+
